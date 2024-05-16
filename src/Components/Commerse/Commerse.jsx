@@ -67,7 +67,7 @@ export default function Commerse() {
 
     return (
         <>
-            <div className='container     w-full lg:py-20 py-10 Commerse'>
+            <div className='w-full lg:py-20 py-10 Commerse'>
 
                 <div className='flex justify-between items-center lg:pl-36 lg:pr-20 py-20 pl-2 '>
                     {/* FIRST BOX */}

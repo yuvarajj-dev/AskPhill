@@ -39,11 +39,11 @@ export default function Shift() {
 
   return (
     <>
-      <div className=' h-[100vh] bg-[#faf8f7] overflow-hidden py-[5%] '>
+      <div className=' bg-[#faf8f7] overflow-hidden py-[5%] '>
         <div className='flex w-full roll-1 py-[.5rem] -ml-[25rem]'>
           <Photocard link={".\\Shifiting\\diana.png"} />
           <Photocard link={".\\Shifiting\\diana.png"} />
-          <p className='md:text-[max(18svh,8.75rem)] text-[9svh] md:leading-[8rem] tracking-tighter  font-bold'>Built</p>
+          <p className='lg:text-[max(18svh,8.75rem)] text-[9svh] md:leading-[8rem] tracking-tighter  font-bold'>Built</p>
           <Photocard link={".\\Shifiting\\diana.png"} />
           <Photocard link={".\\Shifiting\\diana.png"} />
           <Photocard link={".\\Shifiting\\diana.png"} />
@@ -52,7 +52,7 @@ export default function Shift() {
           <Photocard link={".\\Shifiting\\diana.png"} />
           <Photocard link={".\\Shifiting\\diana.png"} />
           <Photocard link={".\\Shifiting\\diana.png"} />
-          <p className='md:text-[max(18svh,8.75rem)] text-[9svh] md:leading-[8rem] tracking-tighter  font-bold'>by</p>
+          <p className='lg:text-[max(18svh,8.75rem)] text-[9svh] md:leading-[8rem] tracking-tighter  font-bold'>by</p>
           <Photocard link={".\\Shifiting\\diana.png"} />
           <Photocard link={".\\Shifiting\\diana.png"} />
           <Photocard link={".\\Shifiting\\diana.png"} />
@@ -61,7 +61,7 @@ export default function Shift() {
           <Photocard link={".\\Shifiting\\diana.png"} />
           <Photocard link={".\\Shifiting\\diana.png"} />
           <Photocard link={".\\Shifiting\\diana.png"} />
-          <p className='md:text-[max(18svh,8.75rem)] text-[9svh] md:leading-[8rem] tracking-tighter  font-bold'>the</p>
+          <p className='lg:text-[max(18svh,8.75rem)] text-[9svh] md:leading-[8rem] tracking-tighter  font-bold'>the</p>
           <Photocard link={".\\Shifiting\\diana.png"} />
           <Photocard link={".\\Shifiting\\diana.png"} />
           <Photocard link={".\\Shifiting\\diana.png"} />
@@ -69,7 +69,7 @@ export default function Shift() {
         <div className='flex  roll-4 py-[.5rem]'>
           <Photocard link={".\\Shifiting\\diana.png"} />
           <Photocard link={".\\Shifiting\\diana.png"} />
-          <p className='md:text-[max(18svh,8.75rem)] text-[9svh] md:leading-[8rem] tracking-tighter  font-bold'>ambitious</p>
+          <p className='lg:text-[max(18svh,8.75rem)] text-[9svh] md:leading-[8rem] tracking-tighter  font-bold'>ambitious</p>
           <Photocard link={".\\Shifiting\\diana.png"} />
           <Photocard link={".\\Shifiting\\diana.png"} />
         </div>

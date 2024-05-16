@@ -31,7 +31,7 @@
  }
 
  #toggle2:checked+#switch1 #circle2 {
-     left: 600px;
+     left: 50%;
      background-position: -350px 0;
  }
 
@@ -70,16 +70,7 @@
          /* Increase slightly from the initial scale */
      }
  }
- @media (width < 1280px) and (width > 1024px){
-    #circle2{
-        top: 20px;
-    }
-    #toggle2:checked+#switch1 #circle2 {
-        left: 50%;
-        background-position: -350px 0;
-    }
-
- }
+ 
  @media (width < 1024px){
     #circle2{
         top: 10px;
