@@ -17,9 +17,7 @@ function App() {
         <Expert />
         <Shopify />
         <Truested />
-        <Expert />
         <Shift />
-        <Expert />
     </div>
   );
 }
