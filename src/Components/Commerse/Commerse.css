@@ -1,0 +1,108 @@
+:root {
+    --shadow: rgba(33, 28, 18, 0.1) 0px 0px 0px 0px,
+             rgba(33, 28, 18, 0.1) 6px 7px 20px 0px,
+             rgba(33, 28, 18, 0.09) 25px 27px 37px 0px,
+             rgba(33, 28, 18, 0.05) 57px 60px 50px 0px,
+             rgba(33, 28, 18, 0.01) 101px 107px 59px 0px,
+             rgba(33, 28, 18, 0) 158px 167px 64px 0px;
+  }
+.Commerse{
+    background-color: #d8ccb5;
+}
+
+.conversion{
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+.con-items > div{
+    border-radius: 12px;
+}
+.Brand{
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+.Brand >div{
+    position: relative;
+    top: -10px;
+}
+
+.arrow{
+    border-radius: 50%;
+    width: 2.5rem;
+}
+@media (width > 1024px){
+    .Brand:nth-child(2){
+        line-height: 50px;
+    }
+    .build-mid > p{
+        line-height: 100px;
+    }
+}
+.beyond {
+    background-image: url('/public/Second Section/Lady-pic.jpg');
+    background-repeat: no-repeat;
+    background-position: 50% 20%;
+    background-size: 110%;
+}
+.shoe-div{
+    width: 70%;
+    margin: 0 auto;
+}
+.shoe{
+    width: 100%;
+    height: 100%;
+}
+@media (width < 1204px){
+    .conversion{
+        border-radius: 12px;
+    }
+    .con-items > div{
+        border-radius: 2px;
+    }
+    .build-mid > p{
+        line-height: 70px;
+    }
+    .Brand{
+        border-radius: 6px;
+    }
+    .arrow{
+        width: 1.5rem;
+    }
+}
+@media (width < 768px){
+    .conversion{
+        border-radius: 12px;
+    }
+    .con-items > div{
+        border-radius: 2px;
+    }
+    .build-mid > p{
+        line-height: 50px;
+    }
+    .Brand{
+        border-radius: 6px;
+    }
+    .arrow{
+        width: 1.5rem;
+    }
+}
+@media (width < 640px){
+    .conversion{
+        border-radius: 12px;
+    }
+    .con-items > div{
+        border-radius: 2px;
+    }
+    .build-mid > p{
+        line-height: 40px;
+    }
+    .Brand{
+        border-radius: 6px;
+    }
+    .arrow{
+        width: 1.5rem;
+        
+    }
+
+}

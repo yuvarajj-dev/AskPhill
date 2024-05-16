@@ -1,0 +1,145 @@
+.Askphill {
+    background-color: #de0015;
+}
+
+.df {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.filled {
+    background-color: #fff;
+}
+
+.slide-top {
+    animation: slide-top 0.4s ease-in-out;
+}
+
+@keyframes slide-top {
+    0% {
+        transform: translateY(280px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0px);
+
+        opacity: .5;
+    }
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+#switch {
+    margin: 0 auto;
+    margin-top: 15%;
+    display: block;
+    width: 180px;
+    position: relative;
+    height: 95px;
+    background-color: red;
+    border-radius: 350px;
+    cursor: pointer;
+}
+
+#circle {
+    width: 70px;
+    height: 70px;
+    background-color: white;
+    position: relative;
+    top: 13px;
+    left: 15px;
+    border: 10px solid white;
+    border-radius: 290px;
+    transition: 0.4s ease left, 0.4s ease background-position;
+    z-index: 2;
+}
+
+#toggle:checked + #switch #circle {
+    left: 100px;
+}
+
+#toggle:checked + #switch {
+    background: #0bc148;
+}
+.scale-in-bottom {
+	animation: scale-in-bottom 1s ease-out both;
+}
+@keyframes scale-in-bottom {
+    0% {
+      transform: scale(0);
+      transform-origin: 50% 100%;
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      transform-origin: 50% 100%;
+      opacity: 1;
+    }
+  }
+  
+
+
+
+@media (width > 1022px) and (width < 1280px) {
+    #switch{
+        width: 120px;
+        height: 60px;
+        top: 10px;
+        left: 5px;
+    }
+    #circle{
+        width: 50px;
+        height: 50px;
+        top: 5px;
+        left: 3px;
+    }
+    #toggle:checked + #switch #circle {
+        left: 65px;
+    }
+
+}
+@media (width > 640px) and (width < 1024px) {
+    #switch{
+        width: 100px;
+        height: 50px;
+        top: 8px;
+        left: 5px;
+    }
+    #circle{
+        width: 40px;
+        height: 40px;
+        top: 5px;
+        left: 3px;
+    }
+    #toggle:checked + #switch #circle {
+        left: 60px;
+    }
+
+}
+@media (width < 640px){
+    #switch{
+        width: 60px;
+        top: -3px;
+        left: 5px;
+        height: 28px;
+    }
+    #circle{
+        width: 25px;
+        height: 25px;
+        top: 2px;
+        left: 3px;
+    }
+    #toggle:checked + #switch #circle {
+        left: 32px;
+    }
+
+}

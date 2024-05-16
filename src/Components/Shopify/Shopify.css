@@ -1,0 +1,101 @@
+ #switch1 {
+     margin: 0 auto;
+     margin-top: 10%;
+     margin-bottom: 10%;
+     position: relative;
+     display: block;
+     width: 75vw;
+     /* Use viewport width */
+     height: 37vw;
+     /* Use viewport width */
+     max-width: 75rem;
+     /* Set maximum width in pixels */
+     max-height: 37rem;
+     background-color: #95bf46;
+     border-radius: 350px;
+ }
+
+ #circle2 {
+    width: 35vw; /* Use viewport width */
+    height: 33vw; /* Use viewport width */
+    max-width: 35rem; /* Set maximum width in pixels */
+    max-height: 33rem;
+     background-color: #faf8f7;
+     position: relative;
+     top: 30px;
+     left: 35px;
+     border: 10px solid #faf8f7;
+     border-radius: 50%;
+     transition: 0.4s ease left, 0.4s ease background-position;
+     z-index: 2;
+ }
+
+ #toggle2:checked+#switch1 #circle2 {
+     left: 600px;
+     background-position: -350px 0;
+ }
+
+ #toggle2:checked+#switch1 {
+     background: #95bf46;
+ }
+
+ .bouncing-round {
+    fill: 0;
+ }
+
+ .bouncing-round:hover {
+     animation: gelatineX 0.5s;
+ }
+
+ @keyframes gelatineX {
+
+     from,
+     to {
+         transform: scale(0.95);
+         /* Reduce the initial scale value */
+     }
+
+     25% {
+         transform: scale(1.05);
+         /* Increase slightly from the initial scale */
+     }
+
+     50% {
+         transform: scale(0.97);
+         /* Reduce slightly from the initial scale */
+     }
+
+     75% {
+         transform: scale(1.03);
+         /* Increase slightly from the initial scale */
+     }
+ }
+ @media (width < 1280px) and (width > 1024px){
+    #circle2{
+        top: 20px;
+    }
+    #toggle2:checked+#switch1 #circle2 {
+        left: 50%;
+        background-position: -350px 0;
+    }
+
+ }
+ @media (width < 1024px){
+    #circle2{
+        top: 10px;
+    }
+    #toggle2:checked+#switch1 #circle2 {
+        left: 50%;
+        background-position: -350px 0;
+    }
+ }
+ @media (width < 640px){
+    #circle2{
+        top: 5px;
+        left: 15px;
+    }
+    #toggle2:checked+#switch1 #circle2 {
+        left: 50%;
+        background-position: -350px 0;
+    }
+ }

@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import Commerse from './Components/Commerse/Commerse';
+import Expert from './Components/Expert/Expert';
+import Askphill from './Components/Home Section/Askpill/Askphill';
+import Partner from './Components/Partner/Partner';
+import Shift from './Components/Shifiting/Shift';
+import Shopify from './Components/Shopify/Shopify';
+import Truested from './Components/Truested/Truested';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        {/* <Askphill />
+        <Commerse />
+        <Partner />
+        <Expert />
+        <Shopify />
+        <Truested /> */}
+        <Expert />
+        <Shift />
+        <Expert />
     </div>
   );
 }
