@@ -15,10 +15,10 @@ export default function Shift() {
       ease: 'power1.inOut',
       scrollTrigger: {
         trigger: container,
-        start: 'top 95%',
-        end: 'bottom 5%',
+        start: 'top 90%',
+        end: 'bottom 10%',
         scrub: 1,
-        markers: true,
+      
         onUpdate: self => {
           const progress = self.progress;
           const scrollAmount = (container.scrollWidth - container.clientWidth) * scrollPercentage * progress;
