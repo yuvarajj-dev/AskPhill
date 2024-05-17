@@ -49,7 +49,7 @@ export default function Know() {
                             </div>
                         </div>
                         <div>
-                            <img src="./knowledge/rethinking.jpg" alt="knowledge" className='rounded-2xl' />
+                            <img src=".\Knowledge\rethinking.jpg" alt="knowledge" className='rounded-2xl' />
                         </div>
                     </div>
                     <div className='grid lg:grid-cols-2 max-w-[94%]  gap-7 mx-auto'>
