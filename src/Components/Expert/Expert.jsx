@@ -58,9 +58,9 @@ export default function Expert() {
 
     return (
         <>
-            <div className='bg-[#131313] text-[#faf8f7] '>
+            <div className='bg-[#131313] '>
                 <div className='py-[6rem] max-w-full'>
-                    <p className='text-[clamp(2.5rem,7vw,6.25rem)] expert text-center font-bold w-full overflow-hidden '>Our <span className='text-[#878685]'>expertise</span></p>
+                    <p className='text-[clamp(2.5rem,7vw,6.25rem)] expert text-center text-[#faf8f7] font-bold w-full overflow-hidden '>Our <span className='text-[#878685]'>expertise</span></p>
                 </div>
                 <div className='pb-10'>
                     <Accordian id={1} title={"Strategy"} description={`We're your strategic partner, deeply understanding your brand's essence with a dedicated product owner for each project, crafting personalized, data-informed strategies that put you ahead of the competition.`} isOpen={openAccordionIds === 1} toggleAccordion={handleToggleAccordion} />
