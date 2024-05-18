@@ -8,58 +8,90 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Know() {
     useEffect(() => {
         const applyParallax = () => {
-            if (window.innerWidth >= 1280) {
-                gsap.to("#scroll", {
-                    y: "8.7rem",
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: "#scroll",
-                        start: "top 20%",
-                        end: "bottom top",
-                        scrub: true,
-                    }
-                });
-                gsap.to("#scroll2", {
-                    y: "10em",
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: "#scroll2",
-                        start: "top 25%",
-                        end: "bottom center",
-                        scrub: true,
-                    }
-                });
-            }
-        };
-        applyParallax();
-        window.addEventListener('resize', applyParallax);
-       
-        // Initialize text animation
-        const initAnimation = () => {
-            let typeSplit = new SplitType('[animate]', {
-                types: 'lines, words, chars',
-                tagName: 'span'
-            });
+            const handleResize = () => {
+                if (window.innerWidth >= 1280) {
+                    // Apply parallax animations for screens wider than 1280px
+                    gsap.to("#scroll", {
+                        y: "8.7rem",
+                        ease: "none",
+                        scrollTrigger: {
+                            trigger: "#scroll",
+                            start: "top 20%",
+                            end: "bottom top",
+                            scrub: true
+                        }
+                    });
 
-            gsap.from('[animate] .char', {
-                y: '110%',
-                opacity: 1,
-                rotationZ: '10',
-                duration: 1.2,
-                ease: 'power3.inOut',
-                stagger: 0.15,
+                    gsap.to("#scroll2", {
+                        y: "10em",
+                        ease: "none",
+                        scrollTrigger: {
+                            trigger: "#scroll2",
+                            start: "top 25%",
+                            end: "bottom center",
+                            scrub: true
+                        }
+                    });
+                } else {
+                    // Disable parallax animations for screens under 1280px
+                    gsap.killTweensOf("#scroll"); // Clear existing animations for #scroll
+                    gsap.killTweensOf("#scroll2"); // Clear existing animations for #scroll2
+                }
+            };
+
+            // Call handleResize initially and on window resize
+            handleResize();
+            window.addEventListener("resize", handleResize);
+        };
+
+        // Call applyParallax to initiate the logic (optional)
+        applyParallax();
+
+        const homeanime = (selector) => {
+            // Fetch elements using the selector
+            const elements = document.querySelectorAll(selector);
+
+            if (!elements.length) {
+                // Handle the case where no elements are found
+                console.warn(`No elements found for selector: "${selector}"`);
+                return;
+            }
+
+            elements.forEach((element) => {
+                // Create a new SplitType instance, ensuring library is loaded
+                if (typeof SplitType !== 'undefined') {
+                    const text = new SplitType(element, { type: "chars" });
+
+                    // Animate the characters using GSAP
+                    gsap.from(text.lines, {
+                        y: '110%',
+                        opacity: 0,
+                        rotationZ: '10deg',
+                        duration: 0.85,
+                        ease: 'none.out', // Adjust ease function as needed
+                        stagger: 0.3,
+                        scrollTrigger: {
+                          trigger: element, // Trigger animation on the element itself
+                          start: 'top bottom', // Start animation when element reaches top center of viewport
+                        },
+                      });
+                } else {
+                    console.warn('SplitType library not found. Animation cannot be performed.');
+                }
             });
         };
         
-        // Call the initAnimation function when component mounts
-        initAnimation();
+
+        // Call the animation with the desired selector
+        homeanime(".Title");
 
     }, []);
+
     return (
         <>
             <div className='Know bg-[#faf8f7]'>
                 <div className='lg:py-20 py-10'>
-                    <p animate className='text-[clamp(2.5rem,7vw,6.25rem)] sm:w-full w-[80%] mx-auto  font-bold text-center tracking-tighter leading-[1] py-5'>Knowledge</p>
+                    <p animate className='text-[clamp(2.5rem,7vw,6.25rem)] Title sm:w-full w-[80%] mx-auto  font-bold text-center tracking-tighter leading-[1] py-5'>Knowledge</p>
                     <div className='flex justify-center items-center py-2'>
                         <button className=' bouncing-bg sm:w-[10em] sm:h-[3rem] w-[6rem] h-[2rem] sm:text-[21px] text-[13px]  font-semibold rounded-full  bg-[#d8ccb5]'>Discover all</button>
                     </div>
