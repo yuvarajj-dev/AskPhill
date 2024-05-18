@@ -1,11 +1,65 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import "./Know.css"
+import SplitType from 'split-type'
 
+gsap.registerPlugin(ScrollTrigger);
 export default function Know() {
+    useEffect(() => {
+        const applyParallax = () => {
+            if (window.innerWidth >= 1280) {
+                gsap.to("#scroll", {
+                    y: "8.7rem",
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: "#scroll",
+                        start: "top 20%",
+                        end: "bottom top",
+                        scrub: true,
+                    }
+                });
+                gsap.to("#scroll2", {
+                    y: "10em",
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: "#scroll2",
+                        start: "top 25%",
+                        end: "bottom center",
+                        scrub: true,
+                    }
+                });
+            }
+        };
+        applyParallax();
+        window.addEventListener('resize', applyParallax);
+       
+        // Initialize text animation
+        const initAnimation = () => {
+            let typeSplit = new SplitType('[animate]', {
+                types: 'lines, words, chars',
+                tagName: 'span'
+            });
+
+            gsap.from('[animate] .char', {
+                y: '110%',
+                opacity: 1,
+                rotationZ: '10',
+                duration: 1.2,
+                ease: 'power3.inOut',
+                stagger: 0.15,
+            });
+        };
+        
+        // Call the initAnimation function when component mounts
+        initAnimation();
+
+    }, []);
     return (
         <>
             <div className='Know bg-[#faf8f7]'>
                 <div className='lg:py-20 py-10'>
-                    <p className='text-[clamp(2.5rem,7vw,6.25rem)] sm:w-full w-[80%] mx-auto  font-bold text-center tracking-tighter leading-[1] py-5'>Knowledge</p>
+                    <p animate className='text-[clamp(2.5rem,7vw,6.25rem)] sm:w-full w-[80%] mx-auto  font-bold text-center tracking-tighter leading-[1] py-5'>Knowledge</p>
                     <div className='flex justify-center items-center py-2'>
                         <button className=' bouncing-bg sm:w-[10em] sm:h-[3rem] w-[6rem] h-[2rem] sm:text-[21px] text-[13px]  font-semibold rounded-full  bg-[#d8ccb5]'>Discover all</button>
                     </div>
@@ -13,7 +67,7 @@ export default function Know() {
                 {/* Card div */}
                 <div>
                     <div className='grid lg:grid-cols-2 max-w-[94%] gap-7 py-7 mx-auto'>
-                        <div className='bg-[#4cacc8] xl:h-[80%] lg:h-[95%] sm:h-[100%] h-[20rem] rounded-2xl sm:px-11 px-5 sm:py-10 py-5 relative'>
+                        <div id='scroll' className='bg-[#4cacc8] xl:h-[80%] lg:h-[95%] sm:h-[100%] h-[20rem] rounded-2xl sm:px-11 px-5 sm:py-10 py-5 relative'>
                             {/* Heading */}
                             <div className='py-3'>
                                 <button className='bouncing-bg sm:w-[6em] sm:h-[3rem] w-[6rem] h-[2rem] sm:text-[21px] text-[13px] font-semibold rounded-full text-[#4cacc8] bg-[#cbd7dd]'>Headless</button>
@@ -54,11 +108,11 @@ export default function Know() {
                     </div>
                     <div className='grid lg:grid-cols-2 max-w-[94%]  gap-7 mx-auto'>
                         {/* image */}
-                        <div className='max-h-[85%] lg:order-1 order-2  w-full'>
+                        <div className='max-h-[90%] lg:order-1 order-2  w-full'>
                             <img src="./Knowledge/d2c.webp" alt="knowledge" className='rounded-2xl h-[100%] w-full object-cover ' />
                         </div>
                         {/* Text */}
-                        <div className='bg-[#dead5d] lg:order-2 order-1 xl:h-[70%] lg:h-[95%] sm:h-[100%] h-[20rem] rounded-2xl sm:px-11 px-5 sm:py-10 py-5 relative'>
+                        <div id="scroll2" className='bg-[#dead5d] lg:order-2 order-1 xl:h-[70%] lg:h-[95%] sm:h-[100%] h-[20rem] rounded-2xl sm:px-11 px-5 sm:py-10 py-5 relative'>
                             {/* Heading */}
                             <div className='py-3'>
                                 <button className='bouncing-bg  w-[6rem] h-[2rem]  sm:w-[7em] sm:h-[3rem] sm:text-[21px] text-[13px] font-semibold rounded-full text-[#dead5d] bg-[#fff2db]'>D2C Summit</button>
@@ -69,10 +123,10 @@ export default function Know() {
                                 <p className='sm:text-[1.3125rem] text-[12px] font-semibold text-[#eece99] py-5'>Ask Phill's take on the streetwear drop that's got everyone talking</p>
                             </div>
                             {/* arrow */}
-                            <div className='flex justify-end items-center pt-[3rem]  absolute sm:bottom-6 sm:right-6 bottom-4 right-4'>
+                            <div className='flex justify-end items-center pt-[3rem] arrow-container absolute sm:bottom-6 sm:right-6 bottom-4 right-4 button'>
                                 <div className='sm:w-[4.5rem] sm:h-[4.5rem] w-[3rem] h-[3rem] flex justify-center items-center rounded-full bg-[#fff2db]'>
                                     <svg
-                                        className={`size-7 lg:size-[2.25rem] text-[#dead5d] [--rotate:-45deg] rotate-[--rotate] flex items-center justify-center overflow-hidden`}
+                                        className={`size-7 arrow-svg lg:size-[2.25rem] text-[#dead5d] [--rotate:-45deg] rotate-[--rotate] flex items-center justify-center overflow-hidden`}
                                         viewBox="0 0 48 48"
                                         fill="none"
                                         xmlns="http://www.w3.org/2000/svg"
@@ -96,7 +150,7 @@ export default function Know() {
                     </div>
                 </div>
                 {/* LAST CARD */}
-                <div className='max-w-[94%] mx-auto lg:h-[35rem] bg-[#d8ccb5] rounded-2xl w-full relative xl:-top-[6.5rem] flex lg:gap-10 flex-col justify-between mb-5 lg:py-5 '>
+                <div className='max-w-[94%] mx-auto lg:h-[35rem] bg-[#d8ccb5] rounded-2xl w-full relative xl:-top-[1rem] flex lg:gap-10 flex-col justify-between mb-5 lg:py-5 '>
                     {/* heading */}
                     <div className='px-10 py-5 lg:py-5'>
                         <p className='text-[clamp(4.2rem,13.9vw,12.5rem)] font-bold tracking-tighter lg:leading-[200px] leading-[1]  '>Stay ahead</p>

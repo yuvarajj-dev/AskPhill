@@ -13,14 +13,16 @@ import Truested from './Components/Truested/Truested';
 function App() {
   return (
     <div className="App">
-        <Askphill />
+        {/* <Askphill />
         <Commerse />
         <Partner />
         <Expert />
         <Shopify />
         <Truested />
-        <Shift />
+        <Shift /> */}
+        <Expert />
         <Know />
+        <Expert />
         <Footer />
     </div>
   );
