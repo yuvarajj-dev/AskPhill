@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import './App.css';
 import Commerse from './Components/Commerse/Commerse';
 import Expert from './Components/Expert/Expert';
@@ -14,7 +14,14 @@ import Truested from './Components/Truested/Truested';
 
 function App() {
   const [isMenuHidden, setIsMenuHidden] = useState(false);
+  const [out, setOut] = useState(false);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setOut(true);
+    }, 2000);
+  }, []);
+  
   const hideMenu = useCallback(() => {
     setIsMenuHidden(true);
   }, []);
@@ -22,19 +29,26 @@ function App() {
   const showMenu = useCallback(() => {
     setIsMenuHidden(false);
   }, []);
-  
+
+
   return (
     <div className="App">
       <Askphill />
-      <Commerse />
-      <Partner />
-      <Expert />
-      <Shopify />
-      <Truested />
-      <Shift />
-      <Know />
-      {!isMenuHidden && <Menu />}
-      <Footer hideMenu={hideMenu} showMenu={showMenu} />
+      <div className={out ? "show" : "hidden"}>
+        {out && (
+          <>
+            <Commerse />
+            <Partner />
+            <Expert />
+            <Shopify />
+            <Truested />
+            <Shift />
+            <Know />
+            {!isMenuHidden && <Menu />}
+            <Footer hideMenu={hideMenu} showMenu={showMenu} />
+          </>
+        )}
+      </div>
     </div>
   );
 }

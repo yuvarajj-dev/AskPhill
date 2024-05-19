@@ -9,16 +9,7 @@ export default function Askphill() {
     useEffect(() => {
         const value = document.getElementById('build');
         const videoContainer = document.getElementById('video');
-        // const handleScroll = () => {
-        //     const elementPosition = videoContainer.getBoundingClientRect().top;
-        //     const windowHeight = window.innerHeight;
-
-        //     if (elementPosition < windowHeight) {
-        //         document.body.style.overflow = 'visible';
-        //     } else {
-        //         document.body.style.overflow = 'hidden';
-        //     }
-        // };
+       
         setTimeout(() => {
             setShow(false);
         }, 400);
@@ -52,8 +43,8 @@ export default function Askphill() {
 
     return (
         <>
-            <div className='h-[100vh] '>
-                <div id='askphill' className={` relative top-0 left-0 w-[100%] h-[100vh] ${show ? 'Askphill df' : `filled  ${sec ? 'df' : 'center '}`}`}>
+            <div id='Askphill' className='h-[100vh] overflow-hidden '>
+                <div id='askphill' className={` relative  top-0 left-0 w-[100%] h-[100vh] ${show ? 'Askphill df ' : `filled  ${sec ? 'df' : 'center '}`}`}>
                     <svg
                         data-target="page-transition.intro-logo"
                         className={`absolute w-[200px] origin-center scale-[0.80] cursor-pointer ${show ? "text-white lg:w-[320px]" : `text-[#de0015]  ${sec ? "lg:w-[320px] " : `lg:w-[100px] w-[5rem] mt-10 slide-top fixed z-10 `}`}`}
