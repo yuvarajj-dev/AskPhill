@@ -27,9 +27,10 @@ export default function Know() {
                         ease: "none",
                         scrollTrigger: {
                             trigger: "#scroll2",
-                            start: "top 25%",
+                            start: "top 60%",
                             end: "bottom center",
-                            scrub: true
+                            scrub: true,
+                            markers: true,
                         }
                     });
                 } else {
