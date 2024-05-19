@@ -1,0 +1,229 @@
+input[type="checkbox"] {
+    display: none;
+}
+
+.menu-container {
+    position: fixed;
+    text-align: center;
+    bottom: 5%;
+    left: 50%;
+    /* Adjusted from 43% */
+    transform: translateX(-50%);
+    /* Center horizontally */
+    z-index: 100;
+}
+
+
+#switch3 {
+    position: relative;
+    display: block;
+    width: 200px;
+    height: 85px;
+    background-color: #de0015;
+    border-radius: 350px;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+#circle3 {
+    width: 70px;
+    height: 70px;
+    background-color: white;
+    position: relative;
+    top: 7px;
+    left: 10px;
+    border: 10px solid white;
+    border-radius: 290px;
+    transition: 0.4s ease left, 0.4s ease transform;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+}
+
+.lines {
+    height: 5px;
+    width: 30px;
+    background-color: #de0015;
+}
+
+#toggle3:checked+#switch3 #circle3,
+#toggle3:hover+#switch3 #circle3 {
+    left: 70px;
+    /* Move halfway */
+    transform: rotate(90deg);
+    /* Rotate the circle */
+}
+
+#toggle3:checked+#switch3,
+#toggle3:hover+#switch3 {
+    background: #de0015;
+}
+
+#toggle3:hover+#switch3 {
+    transform: scaleX(1.1);
+    /* Slightly enlarge the button */
+    transition: transform 0.6s ease;
+    /* Smooth scaling */
+}
+
+#menu {
+    position: absolute;
+    bottom: 0px;
+    /* Adjust this value to position the menu above the button */
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 220px;
+    height: 0;
+    overflow: hidden;
+    background-color: #de0015;
+    border-radius: 40px;
+    transition: height 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.6s ease;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform-origin: bottom;
+    /* Expand from the bottom */
+}
+
+
+#toggle3:checked~#menu {
+    height: 400px;
+    /* Adjust height as needed */
+    opacity: 1;
+}
+
+#menu p {
+    color: white;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 35px;
+    padding: 3px 0;
+    transition: opacity 0.4s ease;
+}
+
+#menu p:hover {
+    background-color: white;
+    color: #de0015;
+    width: 90%;
+    border-radius: 25px;
+}
+
+#menu p:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+#menu p:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+#menu p:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+#menu p:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
+#menu p:nth-child(5) {
+    transition-delay: 0.5s;
+}
+
+#menu p:nth-child(6) {
+    transition-delay: 0.6s;
+}
+
+#toggle3:checked~#menu p {
+    opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+    .menu-container {
+        bottom: 10%;
+        /* Adjusted bottom position */
+    }
+
+    #switch3 {
+        width: 120px;
+        /* Adjusted width */
+        height: 50px;
+
+        /* Adjusted height */
+    }
+
+    .lines {
+        height: 4px;
+        width: 18px;
+    }
+
+    #circle3 {
+        width: 40px;
+        /* Adjusted width */
+        height: 40px;
+        top: 5px;
+        gap: 5px;
+        /* Adjusted height */
+        border: 3px solid white;
+        /* Adjusted border */
+    }
+
+    #menu {
+        position: absolute;
+        bottom: 0px;
+        /* Adjust this value to position the menu above the button */
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 120px;
+        height: 0;
+        overflow: hidden;
+        background-color: #de0015;
+        border-radius: 20px;
+        transition: height 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.6s ease;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transform-origin: bottom;
+        /* Expand from the bottom */
+    }
+
+
+    #toggle3:checked~#menu {
+        height: 250px;
+        /* Adjust height as needed */
+        opacity: 1;
+    }
+
+    #menu p {
+        color: white;
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 20px;
+        padding: 3px 0;
+        transition: opacity 0.4s ease;
+    }
+
+    #toggle3:checked+#switch3 #circle3,
+    #toggle3:hover+#switch3 #circle3 {
+        left: 40px;
+        /* Move halfway */
+        transform: rotate(90deg);
+        /* Rotate the circle */
+    }
+
+    #menu p:hover {
+        background-color: white;
+        color: #de0015;
+        width: 90%;
+        border-radius: 25px;
+    }
+}
