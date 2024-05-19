@@ -70,11 +70,11 @@ export default function Truested() {
 
     return (
         <>
-            <div className="Truested py-10 bg-[#faf8f7] overflow-hidden lg:h-[180vh]  h-[120vh]">
+            <div className="Truested py-10 bg-[#faf8f7] overflow-hidden xl:h-[180vh] lg:h-[200vh] md:h-[100vh] sm:h-[100vh] h-[100vh]">
                 <div className='lg:py-20 py-10'>
                     <p className='text-[clamp(2.5rem,7vw,6.25rem)] sm:w-full w-[80%] mx-auto  font-bold text-center tracking-tighter leading-[1] py-5'>Trusted by the finest</p>
                     <div className='flex justify-center items-center py-5'>
-                        <button className=' bouncing-bg w-[10em] h-[3rem] sm:text-[21px] text-[15px] font-semibold rounded-full  bg-[#d8ccb5]'>Highlighted cases</button>
+                        <button className=' bouncing-bg w-[10em] h-[3rem] sm:text-[21px] text-[15px] font-semibold rounded-full bouncy-button  bg-[#d8ccb5]'>Highlighted cases</button>
                     </div>
                 </div>
                 {/* CARD SECTION */}

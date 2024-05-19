@@ -93,7 +93,7 @@ export default function Know() {
                 <div className='lg:py-20 py-10'>
                     <p animate className='text-[clamp(2.5rem,7vw,6.25rem)] Title sm:w-full w-[80%] mx-auto  font-bold text-center tracking-tighter leading-[1] py-5'>Knowledge</p>
                     <div className='flex justify-center items-center py-2'>
-                        <button className=' bouncing-bg sm:w-[10em] sm:h-[3rem] w-[6rem] h-[2rem] sm:text-[21px] text-[13px]  font-semibold rounded-full  bg-[#d8ccb5]'>Discover all</button>
+                        <button className=' bouncing-bg sm:w-[10em] sm:h-[3rem] w-[6rem] h-[2rem] sm:text-[21px] text-[13px]  font-semibold rounded-full bouncy-button  bg-[#d8ccb5]'>Discover all</button>
                     </div>
                 </div>
                 {/* Card div */}

@@ -18,11 +18,12 @@ const Menu = () => {
   return (
     <div className={`menu-container ${Menu ? "show" : "hidden"}`}>
       <input type="checkbox" id="toggle3" checked={isChecked} onChange={() => setIsChecked(!isChecked)} />
-      <label id="switch3" htmlFor="toggle3">
+      <label className='' id="switch3" htmlFor="toggle3">
         <div id="circle3">
           <div className="lines"></div>
           <div className="lines"></div>
         </div>
+        <p className='md:text-[35px] text-[20px] font-bold text-[white] relative md:-top-[55px] -top-[30px] left-[1.5rem] md:left-[2.5rem]'id='menu-1' >Menu</p>
       </label>
       <div id="menu" className='menu' onMouseLeave={handleMouseLeave}>
         <p>Contact</p>

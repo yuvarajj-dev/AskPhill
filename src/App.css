@@ -1,34 +1,34 @@
-body{
+body {
     font-family: "Inter", sans-serif;
 }
-h1,h2,h3,h4,h5,p,span{
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+span {
     padding: 0;
     margin: 0;
 }
-.bouncing-bg{
-    
+
+.bouncy-button {
+    transition: transform 0.25s ease;
 }
 
-.bouncing-bg:hover {
-    animation: gelatineX 0.5s ;
+.bouncy-button:hover {
+    animation: bounce 0.5s ease;
 }
 
-@keyframes gelatineX {
+@keyframes bounce {
 
-    from,
-    to {
-        transform: scaleX(1);
-    }
-
-    25% {
-        transform: scaleX(1.1);
+    0%,
+    100% {
+        transform: scale(1);
     }
 
     50% {
-        transform: scaleX(0.9);
-    }
-
-    75% {
-        transform: scaleX(1.05);
+        transform: scale(1.1);
     }
 }

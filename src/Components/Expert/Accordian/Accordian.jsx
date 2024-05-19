@@ -1,15 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import gsap from 'gsap';
 
-export default function Accordion(props) {
-    const [isOpen, setIsOpen] = useState(false);
-
-    const toggleAccordion = () => {
-        setIsOpen(!isOpen);
-    };
-
+export default function Accordian({ id, title, description, isOpen, toggleAccordion }) {
     useEffect(() => {
-        const element = document.querySelector(`.accordion-content-${props.id}`);
+        const element = document.querySelector(`.accordion-content-${id}`);
         if (isOpen) {
             gsap.to(element, {
                 height: 'auto',
@@ -29,18 +23,18 @@ export default function Accordion(props) {
                 ease: 'power2.inOut'
             });
         }
-    }, [isOpen, props.id]);
+    }, [isOpen, id]);
 
     return (
-        <div onClick={toggleAccordion} className='cursor-pointer'>
-            <div className={`lg:w-[92%] w-[95%] lg:h-auto md:rounded-3xl sm:rounded-2xl rounded-xl mx-auto bg-[${isOpen ? '#faf8f7' : '#191919'}] text-[${isOpen ? '#191919' : '#faf8f7'}] ${isOpen ? "": `hover:bg-[#292929]`} lg:grid lg:grid-cols-2 items-start lg:py-0 py-5 my-10 px-5`}>
+        <div onClick={() => toggleAccordion(id)} className='cursor-pointer'>
+            <div className={`lg:w-[92%] w-[95%] lg:h-auto md:rounded-3xl sm:rounded-2xl rounded-xl mx-auto ${isOpen ? 'bg-[#fff]' : 'bg-[#191919]'} text-[${isOpen ? '#191919' : '#fff'}] ${isOpen ? '' : ' hover:bg-[#292929]'} lg:grid lg:grid-cols-2 items-start lg:py-0 py-5 my-10 px-5`}>
                 <div className='lg:py-9 lg:px-16'>
-                    <p className='lg:text-[50px] sm:text-[40px] text-[30px] font-bold'>{props.title}</p>
+                    <p className='lg:text-[50px] sm:text-[40px] text-[30px] font-bold'>{title}</p>
                 </div>
-                <div className={`bg-${isOpen ? '#faf8f7' : '#191919'} text-${isOpen ? '#191919' : '#faf8f7'} accordion-content accordion-content-${props.id}`} style={{ height: 0, overflow: 'hidden' }}>
+                <div className={`bg-${isOpen ? '#faf8f7' : '#191919'} text-${isOpen ? '#191919' : '#faf8f7'} accordion-content accordion-content-${id}`} style={{ height: 0, overflow: 'hidden' }}>
                     <div className='lg:py-16 xl:w-[85%] w-[95%]'>
-                        <p className='lg:text-[20px] sm:text-[17px] text-[15px] font-semibold'>{props.description}</p>
-                        <button className='lg:my-5 bouncing-bg mt-3 bg-[#131313] sm:h-[3rem] h-[2.5rem] w-[7rem] lg:w-[30%] sm:w-[18%] text-[#faf8f7] lg:text-[20px] sm:text-[17px] text-[14px] text-center self-center sm:rounded-full rounded-3xl font-semibold cursor-pointer'>Read more</button>
+                        <p className='lg:text-[20px] sm:text-[17px] text-[15px] font-semibold'>{description}</p>
+                        <button className='lg:my-5 bouncy-button mt-3 bg-[#131313] sm:h-[3rem] h-[2.5rem] w-[7rem] lg:w-[30%] sm:w-[18%] text-[#faf8f7] lg:text-[20px] sm:text-[17px] text-[14px] text-center self-center sm:rounded-full rounded-3xl font-semibold cursor-pointer'>Read more</button>
                     </div>
                 </div>
             </div>

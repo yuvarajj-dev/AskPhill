@@ -44,30 +44,48 @@ export default function Expert() {
         homeanime(".expert");
     }, []);
 
-    const [openAccordionIds, setOpenAccordionIds] = useState([]);
+    const [openAccordionId, setOpenAccordionId] = useState(1); // Open the first accordion by default
 
     const handleToggleAccordion = (id) => {
-        if (openAccordionIds.includes(id)) {
-            setOpenAccordionIds(openAccordionIds.filter(accId => accId !== id));
+        if (openAccordionId === id) {
+            setOpenAccordionId(null); // Close the accordion if it's already open
         } else {
-            setOpenAccordionIds([id]);
+            setOpenAccordionId(id); // Open the clicked accordion
         }
     };
-
-
 
     return (
         <>
             <div className='bg-[#131313] '>
                 <div className='py-[6rem] max-w-full'>
-                    <p className='text-[clamp(2.5rem,7vw,6.25rem)] expert text-center text-[#faf8f7] font-bold w-full overflow-hidden '>Our <span className='text-[#878685]'>expertise</span></p>
+                    <p className='text-[clamp(2.5rem,7vw,6.25rem)] expert text-center text-[#faf8f7] font-bold w-full overflow-hidden'>
+                        Our <span className='text-[#878685]'>expertise</span>
+                    </p>
                 </div>
                 <div className='pb-10'>
-                    <Accordian id={1} title={"Strategy"} description={`We're your strategic partner, deeply understanding your brand's essence with a dedicated product owner for each project, crafting personalized, data-informed strategies that put you ahead of the competition.`} isOpen={openAccordionIds === 1} toggleAccordion={handleToggleAccordion} />
-                    <Accordian id={2} title={"Creative"} description={`From wireframe to post-launch optimisation, our designers are there every step of the way. We strive for a perfect balance between conversion and brand experience, all while prioritizing mobile-first design.`} isOpen={openAccordionIds === 2} toggleAccordion={handleToggleAccordion} />
-                    <Accordian id={3} title={"Technology"} description={`As Europe's leading Shopify Plus partner, we excel in scalable commerce solutions. Our expertise encompasses everything from custom themes using our Ask Phill starter, to advanced headless development and efficient no-code theme implementations.`} isOpen={openAccordionIds === 3} toggleAccordion={handleToggleAccordion} />
+                    <Accordian
+                        id={1}
+                        title={"Strategy"}
+                        description={`We're your strategic partner, deeply understanding your brand's essence with a dedicated product owner for each project, crafting personalized, data-informed strategies that put you ahead of the competition.`}
+                        isOpen={openAccordionId === 1}
+                        toggleAccordion={handleToggleAccordion}
+                    />
+                    <Accordian
+                        id={2}
+                        title={"Creative"}
+                        description={`From wireframe to post-launch optimisation, our designers are there every step of the way. We strive for a perfect balance between conversion and brand experience, all while prioritizing mobile-first design.`}
+                        isOpen={openAccordionId === 2}
+                        toggleAccordion={handleToggleAccordion}
+                    />
+                    <Accordian
+                        id={3}
+                        title={"Technology"}
+                        description={`As Europe's leading Shopify Plus partner, we excel in scalable commerce solutions. Our expertise encompasses everything from custom themes using our Ask Phill starter, to advanced headless development and efficient no-code theme implementations.`}
+                        isOpen={openAccordionId === 3}
+                        toggleAccordion={handleToggleAccordion}
+                    />
                 </div>
             </div>
         </>
-    )
+    );
 }

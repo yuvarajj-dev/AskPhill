@@ -39,7 +39,7 @@ export default function Partner() {
             });
         });
     }, []);
-
+    
     return (
         <>
             <div className='Partner lg:h-[110vh]  w-full bg-[#faf8f7]  grid lg:grid-cols-2 grid-row-2 sm:px-[4rem] items-center overflow-y-hidden'>
@@ -47,7 +47,7 @@ export default function Partner() {
                 <div className=' flex flex-col lg:items-start items-center gap-10  sm:pt-0 pt-10 '>
                     <p className='xl:text-[100px] lg:text-[80px] hidden lg:flex font-bold tracking-tight leading-[100px]'>Partner <br /> in success stories</p>
                     <p className='sm:text-[70px] lg:hidden text-[2.5rem] font-bold tracking-tight text-center sm:leading-[100px]'>Partner in success stories</p>
-                    <button className=' work w-[9em] h-[3rem] sm:text-[21px] text-[15px] font-semibold rounded-full  bg-[#d8ccb5]'>See our work</button>
+                    <button className='bouncy-button w-[9em] h-[3rem] sm:text-[21px] text-[15px] font-semibold rounded-full  bg-[#d8ccb5]'>See our work</button>
                 </div>
                 {/* CARD SECTION */}
                 <div className='Cards relative sm:top-0 sm:left-0 lg:h-0 md:h-[55vh] sm:h-[60vh] lg:pt-10 pt-[5rem]   '>
@@ -75,7 +75,7 @@ export default function Partner() {
                         </div>
                         <div className='flex flex-col  justify-between'>
                             <p className='xl:text-[60px] lg:text-[45px] sm:text-[40px] text-[30px] sm:leading-[60px] text-[#d6cabf] font-bold'>Denham</p>
-                            <button className='w-[110px] h-[35px] rounded-full bg-[#d6cabf]'>Headless</button>
+                            <button className='w-[110px] h-[35px] rounded-full   bg-[#d6cabf]'>Headless</button>
                         </div>
                     </div>
                 </div>
