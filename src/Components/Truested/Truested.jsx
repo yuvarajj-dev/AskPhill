@@ -70,7 +70,7 @@ export default function Truested() {
 
     return (
         <>
-            <div className="Truested py-10 bg-[#faf8f7] overflow-hidden xl:h-[180vh] lg:h-[200vh] md:h-[100vh] sm:h-[100vh] h-[100vh]">
+            <div className="Truested py-10 bg-[#faf8f7] overflow-hidden xl:h-[180vh] lg:h-[200vh] md:h-[100vh] sm:h-[100vh] h-[120vh]">
                 <div className='lg:py-20 py-10'>
                     <p className='text-[clamp(2.5rem,7vw,6.25rem)] sm:w-full w-[80%] mx-auto  font-bold text-center tracking-tighter leading-[1] py-5'>Trusted by the finest</p>
                     <div className='flex justify-center items-center py-5'>
