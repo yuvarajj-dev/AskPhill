@@ -30,7 +30,6 @@ export default function Know() {
                             start: "top 60%",
                             end: "bottom center",
                             scrub: true,
-                            markers: true,
                         }
                     });
                 } else {
