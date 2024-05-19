@@ -1,3 +1,4 @@
+import { useCallback, useState } from 'react';
 import './App.css';
 import Commerse from './Components/Commerse/Commerse';
 import Expert from './Components/Expert/Expert';
@@ -12,19 +13,28 @@ import Truested from './Components/Truested/Truested';
 
 
 function App() {
- 
+  const [isMenuHidden, setIsMenuHidden] = useState(false);
+
+  const hideMenu = useCallback(() => {
+    setIsMenuHidden(true);
+  }, []);
+
+  const showMenu = useCallback(() => {
+    setIsMenuHidden(false);
+  }, []);
+  
   return (
     <div className="App">
-        <Askphill />
-        <Commerse />
-        <Partner />
-        <Expert />
-        <Shopify />
-        <Truested />
-        <Shift />
-        <Know />
-        <Footer />
-        <Menu />
+      <Askphill />
+      <Commerse />
+      <Partner />
+      <Expert />
+      <Shopify />
+      <Truested />
+      <Shift />
+      <Know />
+      {!isMenuHidden && <Menu />}
+      <Footer hideMenu={hideMenu} showMenu={showMenu} />
     </div>
   );
 }

@@ -15,6 +15,7 @@ span {
 
 .bouncy-button {
     transition: transform 0.25s ease;
+    
 }
 
 .bouncy-button:hover {

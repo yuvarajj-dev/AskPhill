@@ -71,16 +71,15 @@ export default function Know() {
                         ease: 'none.out', // Adjust ease function as needed
                         stagger: 0.3,
                         scrollTrigger: {
-                          trigger: element, // Trigger animation on the element itself
-                          start: 'top bottom', // Start animation when element reaches top center of viewport
+                            trigger: element, // Trigger animation on the element itself
+                            start: 'top bottom', // Start animation when element reaches top center of viewport
                         },
-                      });
+                    });
                 } else {
                     console.warn('SplitType library not found. Animation cannot be performed.');
                 }
             });
         };
-        
 
         // Call the animation with the desired selector
         homeanime(".Title");
@@ -89,7 +88,7 @@ export default function Know() {
 
     return (
         <>
-            <div className='Know bg-[#faf8f7]'>
+            <div className='Know bg-[#faf8f7] overflow-hidden'>
                 <div className='lg:py-20 py-10'>
                     <p animate className='text-[clamp(2.5rem,7vw,6.25rem)] Title sm:w-full w-[80%] mx-auto  font-bold text-center tracking-tighter leading-[1] py-5'>Knowledge</p>
                     <div className='flex justify-center items-center py-2'>
@@ -199,7 +198,7 @@ export default function Know() {
                                 <input className='lg:w-[25rem] w-full sm:h-[5rem] h-[3rem] rounded-full sm:px-10 sm:text-[25px] text-[15px] px-5 font-bold' type="email" name="" placeholder='Email' id="" />
                             </div>
                             <div className='flex justify-end items-center'>
-                                <div className='sm:w-[4.5rem] sm:h-[4.5rem] w-[3rem] h-[3rem] flex justify-center items-center rounded-full bg-[#131313]'>
+                                <div className='sm:w-[4.5rem] bouncy-button sm:h-[4.5rem] w-[3rem] h-[3rem] flex justify-center items-center rounded-full bg-[#131313]'>
                                     <svg
                                         className={`size-7 lg:size-[2.25rem] text-[#faf8f7] [--rotate:-45deg] rotate-[--rotate] flex items-center justify-center overflow-hidden`}
                                         viewBox="0 0 48 48"

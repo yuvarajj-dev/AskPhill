@@ -1,0 +1,42 @@
+.Cursor p{
+    cursor: pointer;
+    transition: transform 0.25s ease;
+    
+}
+
+.Cursor p:hover {
+    animation: bounce1 0.5s ease;
+}
+
+@keyframes bounce1 {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+.Cursor1 div{
+    cursor: pointer;
+    transition: transform 0.25s ease;
+    
+}
+
+.Cursor1 div:hover {
+    animation: bounce1 0.5s ease;
+}
+
+@keyframes bounce1 {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
