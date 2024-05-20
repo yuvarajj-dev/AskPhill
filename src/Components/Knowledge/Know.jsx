@@ -32,11 +32,7 @@ export default function Know() {
                             scrub: true,
                         }
                     });
-                } else {
-                    // Disable parallax animations for screens under 1280px
-                    gsap.killTweensOf("#scroll"); // Clear existing animations for #scroll
-                    gsap.killTweensOf("#scroll2"); // Clear existing animations for #scroll2
-                }
+                } 
             };
 
             // Call handleResize initially and on window resize
