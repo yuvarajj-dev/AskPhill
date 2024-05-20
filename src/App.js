@@ -21,7 +21,7 @@ function App() {
       setOut(true);
     }, 2000);
   }, []);
-  
+
   const hideMenu = useCallback(() => {
     setIsMenuHidden(true);
   }, []);

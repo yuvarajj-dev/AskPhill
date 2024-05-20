@@ -27,7 +27,7 @@ export default function Know() {
                         ease: "none",
                         scrollTrigger: {
                             trigger: "#scroll2",
-                            start: "top 60%",
+                            start: "top 10%",
                             end: "bottom center",
                             scrub: true,
                         }
